@@ -14,4 +14,4 @@ git clone https://github.com/joseafon/servidor-samba-cli.git
 cd servidor-samba-cli && sudo chmod 700 admin.sh
 
 ## Uso
-sudo ./admin.sh
+sudo sh admin.sh
