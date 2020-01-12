@@ -13,6 +13,14 @@
 
 clear
 
+if [ $USER != 'root' ]
+then
+
+echo "\e[31mNo tienes privilegios de administrador\e[0m"
+
+fi
+	exit 1
+
 echo  "\e[92m
 ███████╗███████╗██████╗ ██╗   ██╗██╗██████╗  ██████╗ ██████╗ 
 ██╔════╝██╔════╝██╔══██╗██║   ██║██║██╔══██╗██╔═══██╗██╔══██╗
