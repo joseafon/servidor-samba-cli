@@ -18,8 +18,8 @@ then
 
 echo "\e[31mNo tienes privilegios de administrador\e[0m"
 
-fi
 	exit 1
+fi
 
 echo  "\e[92m
 ███████╗███████╗██████╗ ██╗   ██╗██╗██████╗  ██████╗ ██████╗ 
