@@ -5,7 +5,7 @@ Instala y administra SAMBA como servidor independiente desde la interfaz de lín
 Shell script (Bourne Shell)
 
 ## Prerequisitos
-Ultima versión de Ubuntu Server.
+Ultima versión de Ubuntu, Debian o derivados.
 No tener instalado samba como servidor
 ## Instalación
 git clone https://github.com/joseafon/servidor-samba-cli.git
