@@ -159,7 +159,7 @@ echo
 \e[0m"
 
 echo "\e[96mIP SERVER:\e[0m  \e[92m$(hostname -I)\e[0m"
-
+echo
 echo "\e[93mELIJE UNA OPCION DE CONFIGURACION\e[0m"
 
 echo "\e[96m
