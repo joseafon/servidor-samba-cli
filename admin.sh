@@ -18,7 +18,7 @@ which apt > /dev/null 2>&1 || which dpkg > /dev/null 2>&1
 if [ $? -ne 0 ]
 then
 
-    echo "\e[5m"
+    
     echo  "\e[31mTu sistema operativo no es compatible con este script\e[0m"
 
     exit 1
@@ -28,7 +28,7 @@ fi
 if [ $USER != 'root' ]
 then
 
-echo "\e[5m"
+
 echo "\e[31mNo tienes privilegios de administrador\e[0m"
 
     exit 2
@@ -63,7 +63,7 @@ echo  "\e[96mComprobando la conexion de red...\e[0m"
 	if [ $? -ne 0 ]
 	then
 
-        echo "\e[5m"
+        
 		echo  "\e[31mLa conexion de red ha fallado, intentando conectar con la pasarela...\e[0m"
 
 		gateway=$(ip route show | sed -n 1p | awk '{print $3}')
@@ -73,7 +73,7 @@ echo  "\e[96mComprobando la conexion de red...\e[0m"
 			if [ $? -ne 0 ]
 			then
 
-				echo "\e[5m"
+				
 				echo  "\e[31mNo se ha podido conectar con la pasarela, revise la tarjeta de red y cableado si lo hubiere\e[0m"
 				sleep 3
                 clear
@@ -87,7 +87,8 @@ echo  "\e[96mComprobando la conexion de red...\e[0m"
         echo  "\e[96mHecho\e[0m"
         echo
         echo  "\e[96mInstalando actualizaciones del sistema, espere por favor...\e[0m"
-
+	echo
+	
         apt-get update -y 
         apt-get upgrade -y 
         dpkg --configure -a
@@ -160,7 +161,7 @@ echo
 \e[0m"
 
 echo "\e[96mIP SERVER:\e[0m  \e[92m$(hostname -I)\e[0m"
-
+echo
 echo "\e[93mELIJE UNA OPCION DE CONFIGURACION\e[0m"
 
 echo "\e[96m
@@ -336,7 +337,7 @@ directory mode = 0777
                                 systemctl restart smbd
 		                else
 
-			                echo "\e[5m"
+			               
 				            echo  "\e[31mLa carpeta $directorio no existe\e[0m"
 				            sleep 2
 
@@ -350,7 +351,7 @@ directory mode = 0777
                         ;;
 
                     *) clear
-                        echo "\e[5m"
+                        
                         echo  "\e[31mOPCION NO VALIDA\e[0m"
                         sleep 2
                         ;;
@@ -415,7 +416,7 @@ directory mode = 0777
 			                if [ -d /etc/media/samba/privado/"$directorio" ]
 			                then
 
-				                echo "\e[5m"
+				                
 					            echo  "\e[31mLa carpeta $directorio ya existe\e[0m"
 					            sleep 2
 
@@ -547,7 +548,7 @@ write list = @$directorio" >> /etc/samba/recursos/$directorio.conf
 
 			                    else
 
-				                    echo "\e[5m"
+				                    
 					                echo  "\e[31mLa carpeta $directorio no existe\e[0m"
 					                sleep 2
 
@@ -591,7 +592,7 @@ write list = @$directorio" >> /etc/samba/recursos/$directorio.conf
 
                                 else
 
-                                    echo "\e[5m"
+                                   
                                     echo  "\e[31mLa carpeta $directorio no tiene usuarios o no existe\e[0m"
                                     sleep 2
 
@@ -605,7 +606,7 @@ write list = @$directorio" >> /etc/samba/recursos/$directorio.conf
                                 ;;
 
                         *) clear
-                                echo "\e[5m"
+                                
                                 echo  "\e[31mOPCION NO VALIDA\e[0m"
                                 sleep 2
                                 ;;
@@ -690,7 +691,7 @@ write list = @$directorio" >> /etc/samba/recursos/$directorio.conf
                                         if [ $? -eq 0 ]
                                         then
 
-                                            echo "\e[5m"
+                                            
                                             echo  "\e[31mEl usuario $usuario ya existe\e[0m"
                                             sleep 2
 
@@ -769,7 +770,7 @@ write list = @$directorio" >> /etc/samba/recursos/$directorio.conf
 
 					                else
 
-						                echo "\e[5m"
+						                
 							            echo  "\e[31mEl usuario $usuario no existe\e[0m"
 							            sleep 2
 
@@ -836,7 +837,7 @@ write list = @$directorio" >> /etc/samba/recursos/$directorio.conf
                                                             systemctl restart smbd
                                                 else
 
-                                                    echo "\e[5m"
+                                                   
                                                     echo  "\e[31mEl nombre de usuario no es correcto, revise bien el nombre\e[0m"
                                                     sleep 2
 
@@ -844,7 +845,7 @@ write list = @$directorio" >> /etc/samba/recursos/$directorio.conf
 
                                             else
 
-                                                echo "\e[5m"
+                                                
                                                 echo  "\e[31mLa carpeta $directorio no existe\e[0m"
                                                 sleep 2
 
@@ -852,7 +853,7 @@ write list = @$directorio" >> /etc/samba/recursos/$directorio.conf
 
 				                    else
 
-                                        echo "\e[5m"
+                                        
 					                    echo  "\e[31mel usuario $usuario no existe\e[0m"
 					                    sleep 2
 
@@ -921,7 +922,7 @@ write list = @$directorio" >> /etc/samba/recursos/$directorio.conf
 
                                          else
 
-                                             echo "\e[5m"
+                                             
                                              echo  "\e[31mEl usuario no pertenece no este recurso compartido\e[0m"
                                              sleep 2
 
@@ -931,7 +932,7 @@ write list = @$directorio" >> /etc/samba/recursos/$directorio.conf
 
                                      else
 
-                                        echo "\e[5m"
+                                        
                                         echo  "\e[31mLa carpeta privada $directorio no existe\e[0m"
                                         sleep 2
 
@@ -939,7 +940,7 @@ write list = @$directorio" >> /etc/samba/recursos/$directorio.conf
 
 						        else
 
-							        echo "\e[5m"
+							        
 							        echo  "\e[31mEl usuario $usuario no existe\e[0m"
 							        sleep 2
 
@@ -954,7 +955,7 @@ write list = @$directorio" >> /etc/samba/recursos/$directorio.conf
                                      ;;
 
                           *) clear
-                                echo "\e[5m"
+                                
                                 echo  "\e[31mOPCION NO VALIDA\e[0m"
                                 sleep 2
                                 ;;
@@ -1067,7 +1068,7 @@ write list = @$directorio" >> /etc/samba/recursos/$directorio.conf
 			                ;;
 
 		            *) clear
-			                echo "\e[5m"
+			                
 			                echo  "\e[31mOPCION NO VALIDA\e[0m"
 			                sleep 2
 			                ;;
@@ -1084,7 +1085,7 @@ write list = @$directorio" >> /etc/samba/recursos/$directorio.conf
                     ;;
 
             *) clear
-                    echo "\e[5m"
+                    
                     echo  "\e[31mOPCION NO VALIDA\e[0m"
                     sleep 2
                     ;;
