@@ -12,7 +12,7 @@ git clone https://github.com/joseafon/servidor-samba-cli.git
 
 ## Configuración
 cd servidor-samba-cli && sudo chmod 700 admin.sh
+Los archivos se almacenan en la ruta /etc/media/samba
 
 ## Uso
 sudo sh admin.sh
-Los archvos se almacenarán en la ruta /etc/media/samba
