@@ -6,7 +6,7 @@ Shell script (Bourne Shell)
 
 ## Prerequisitos
 Ultima versión de Ubuntu, Debian o derivados.
-No tener instalado samba como servidor
+No tener instalado samba como servidor o borrar el fichero: sudo rm /etc/samba/smb.conf y copiar el nuevo: sudo cp /usr/samba/smb.conf /etc/samba/
 ## Instalación
 git clone https://github.com/joseafon/servidor-samba-cli.git
 
