@@ -16,3 +16,5 @@ Los archivos se almacenan en la ruta /etc/media/samba
 
 ## Uso
 sudo sh admin.sh
+## Capturas
+![pic1](https://user-images.githubusercontent.com/57175463/73186956-84210b00-4118-11ea-9266-5ce117310dd3.jpg)
